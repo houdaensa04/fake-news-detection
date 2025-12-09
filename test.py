@@ -93,16 +93,19 @@ def manual_testing(news):
     pred_GBC = GBC.predict(new_xv_test)
     pred_RFC = RFC.predict(new_xv_test)
 
-    return print("\n\nLR Prediction: {} \nDT Prediction: {} \nGBC Prediction: {} \nRFC Prediction: {}".format(
-        output_lable(pred_LR[0]),
-        output_lable(pred_DT[0]),
-        output_lable(pred_GBC[0]),
-        output_lable(pred_RFC[0])))
+    result = (
+        f"LR Prediction: {output_lable(pred_LR[0])}\n"
+        f"DT Prediction: {output_lable(pred_DT[0])}\n"
+        f"GBC Prediction: {output_lable(pred_GBC[0])}\n"
+        f"RFC Prediction: {output_lable(pred_RFC[0])}"
+    )
+
+    return result
 
 
 
-news = input("\nÉcris une news à tester : ")
-manual_testing(news)
+# news = input("\nÉcris une news à tester : ")
+# manual_testing(news)
 
 
 

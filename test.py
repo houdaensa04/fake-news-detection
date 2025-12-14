@@ -14,11 +14,11 @@ data_fake["class"]=0
 
 data_true_manual_testing = data_true.tail(10)
 for i in range(21416, 21406, -1):
-    data_true.drop([i], axis=0, inplace=True)  # removing those 10 values from original dataset
+    data_true = data_true.drop([i], axis=0)  # removing those 10 values from original dataset
 
 data_fake_manual_testing = data_fake.tail(10)
 for i in range(21416, 21406, -1):
-    data_fake.drop([i], axis=0, inplace=True)  # removing those 10 values from original dataset
+    data_fake = data_fake.drop([i], axis=0)  # removing those 10 values from original dataset
 
 data_manual_testing = pd.concat([data_fake_manual_testing, data_true_manual_testing], axis=0)
 data_manual_testing.to_csv("manual_testing.csv ")
